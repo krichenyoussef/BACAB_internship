@@ -1,1 +1,11 @@
 pytest
+flask
+redis
+openai
+python-dotenv
+langchain
+langchain-core
+langchain-openai
+langchain-community
+langsmith
+

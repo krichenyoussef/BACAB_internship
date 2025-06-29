@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Vue/Vite
+node_modules/
+dist/
+
+# FAISS & vector index
+*.faiss
+*.pkl
+
+# Docker
+*.log
+
+# VSCode
+.vscode/
