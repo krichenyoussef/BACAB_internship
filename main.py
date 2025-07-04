@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from mycode.rag_indexer import add_documents, search
+from rag_indexer import add_documents, search
 from agent_with_redis import agent
 
 app = Flask(__name__)

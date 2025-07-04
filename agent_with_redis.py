@@ -4,7 +4,7 @@ from langchain.agents import Tool, initialize_agent
 from langchain.memory import ConversationBufferMemory
 from langchain_community.chat_message_histories import RedisChatMessageHistory
 from langchain_openai import ChatOpenAI
-from mycode.rag_search_tool import rag_search_tool
+from rag_search_tool import rag_search_tool
 
 load_dotenv()
 

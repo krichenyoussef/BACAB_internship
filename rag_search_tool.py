@@ -1,5 +1,5 @@
 from langchain.tools import tool
-from mycode.rag_indexer import search
+from rag_indexer import search
 
 @tool
 def rag_search_tool(query: str) -> str:
