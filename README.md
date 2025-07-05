@@ -1,4 +1,3 @@
-<div align="center">
 # BACAB_INTERNSHIP
 
 Empowering Innovation Through Seamless Data Interactions
@@ -48,4 +47,4 @@ This project aims to streamline the development of AI-integrated applications wi
    ```bash
    git clone https://github.com/yourusername/BACAB_INTERNSHIP.git
    cd BACAB_INTERNSHIP
-</div>
+
