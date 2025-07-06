@@ -1,22 +1,6 @@
-from flask import Flask
-from flask_restful import Api, Resource
+from src.agents.langchain_agent import get_agent_with_memory
 
-app = Flask(__name__)
-api = Api(app)
+agent = get_agent_with_memory(redis_url="redis://localhost:6379")
 
-names = { "tim" : {
-                    "age": 20,
-                    "gender": "male"},
-         "jane" : {
-                    "age": 22,
-                    "gender" : "male"}}
-
-class HelloWorld(Resource):
-    def get(self, name):
-        return names[name]
-    
-api.add_resource(HelloWorld, '/HelloWorld/<string:name>')
-
-if __name__ == '__main__':
-    app.run(debug=True, port=5000)  # Flask will now run on http://
-    
+response = agent.run("Quel est l'état du système ?")
+print(response)

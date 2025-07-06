@@ -1,0 +1,48 @@
+BACAB_INTERNSHIP/
+├── .env                                # Variables d’environnement (.gitignored)
+├── dockerfile                          # Conteneurisation de l’app
+├── requirements.txt                    # Dépendances Python
+├── main.py                             # Entrée de l’app Flask
+├── vue-front/                          # (Optionnel) Front-end Vue.js
+│
+├── src/
+│   ├── config/
+│   │   └── config.py                   # Chargement des variables (.env)
+│
+│   ├── controllers/                    # API REST (Interface publique)
+│   │   └── api.py                      # Routes Flask : /upload, /search, etc.
+│
+│   ├── services/                       # Logique métier (Responsabilité unique)
+│   │   ├── embedding_service.py        # Génération d’embeddings multimodaux
+│   │   ├── file_service.py             # Gestion des fichiers (upload, download)
+│   │   ├── retrieval_engine.py         # Recherche vectorielle + sémantique
+│   │   └── memory_service.py           # Mémoire conversationnelle SQL
+│
+│   ├── models/                         # Structures de données (entités)
+│   │   ├── embedding_model.py          # Interfaces modèle d’embedding (OpenAI, HF)
+│   │   └── file_model.py               # Représentation logique d’un fichier/doc
+│
+│   ├── datasource/                     # Accès aux bases et stockage (Infrastructure)
+│   │   ├── db.py                       # Connexion SQLAlchemy à la DB relationnelle
+│   │   ├── azure_blob.py               # Intégration Azure Blob Storage
+│   │   ├── faiss_index.py              # Indexation/recherche FAISS locale
+│   │   └── models/
+│   │       └── conversation.py         # Table SQL : historique des conversations
+│
+│   ├── agents/                         # Agent LangChain intelligent
+│   │   └── langchain_agent.py          # Construction de l’agent avec mémoire SQL
+│
+│   ├── preprocessing/                  # Nettoyage, parsing, normalisation
+│   │   └── cleaning.py
+│
+│   ├── interfaces/                     # Interfaces abstraites (ex: StorageInterface)
+│   │   └── storage_interface.py
+│
+│   └── utils/
+│       └── logger.py                   # Logging structuré
+│
+├── tests/
+│   └── test_api.py                     # Tests unitaires
+│
+├── .github/workflows/
+│   └── ci.yml                          # CI/CD GitHub Actions ou Azure DevOps
