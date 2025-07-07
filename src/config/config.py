@@ -1,18 +1,15 @@
-# src/config/config.py
-
 import os
 from dotenv import load_dotenv
-from pathlib import Path
 
-# Charge les variables depuis le .env
-env_path = Path(__file__).resolve().parent.parent.parent / ".env"
-load_dotenv(dotenv_path=env_path)
+load_dotenv()
 
-class Settings:
-    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
-    AZURE_STORAGE_CONNECTION_STRING: str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-    REDIS_URL: str = os.getenv("REDIS_URL")
-    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "openai")  # default openai
-    FAISS_INDEX_PATH: str = os.getenv("FAISS_INDEX_PATH", "data/index.faiss")
+class AppConfig:
+    # Azure OpenAI Config
+    OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+    OPENAI_API_BASE = os.getenv("AZURE_OPENAI_API_BASE")
+    OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION")
+    OPENAI_MODEL_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME")  # nom du *deployment* Azure
+    LLM_TEMPERATURE = float(os.getenv("LLM_TEMPERATURE", 0.7))
 
-settings = Settings()
+    # RAG
+    VECTOR_STORE_PATH = os.getenv("VECTOR_STORE_PATH", "data/faiss_index")

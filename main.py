@@ -1,6 +1,8 @@
-from src.agents.langchain_agent import get_agent_with_memory
+from flask import Flask
+from src.controllers.api import api_bp
 
-agent = get_agent_with_memory(redis_url="redis://localhost:6379")
+app = Flask(__name__)
+app.register_blueprint(api_bp)
 
-response = agent.run("Quel est l'état du système ?")
-print(response)
+if __name__ == "__main__":
+    app.run(debug=True)
