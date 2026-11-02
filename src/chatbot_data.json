@@ -1,0 +1,17 @@
+{
+  "chatbots": {
+    "1": {
+      "name": "Docs assistant",
+      "params": {
+        "assistant_info": {
+          "language": "English",
+          "voice_tune": "Professional"
+        },
+        "uploaded_files": [
+          "sample/company_handbook.md"
+        ]
+      }
+    }
+  },
+  "conversations": {}
+}
