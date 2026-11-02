@@ -3,6 +3,13 @@
 A Flask API that answers questions over your own documents with three interchangeable RAG workflows,
 two of them built as **LangGraph** agents that check their answer before replying.
 
+## Demo
+
+[![Demo: chatting with the assistant and inspecting the agent trace](docs/demo.gif)](docs/demo.mp4)
+
+*Preview of the chat and the agent trace. The full 3-minute walkthrough (knowledge-base upload,
+training Q&A, HTTP actions, chat with the assistant) is in [docs/demo.mp4](docs/demo.mp4).*
+
 | Workflow | How it answers | Returned with the answer |
 |---|---|---|
 | `basic` | Retrieve top-k chunks from pgvector, answer with sources | `sources` |
