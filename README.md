@@ -46,6 +46,13 @@ flowchart TD
 ```
 After one revision the graph stops, to keep latency and cost bounded.
 
+## Project history
+
+This project started during my internship at BACAB (June–July 2025) as a Flask + FAISS RAG chatbot
+with a Vue front end and an LLM/RAG routing step. The current version rebuilds it as LangGraph agents
+that verify their answers, on pgvector, with tests, Docker and CI. The original internship code is kept
+under the [`v1-internship-2025`](../../tree/v1-internship-2025) tag.
+
 ## Quickstart
 
 Requirements: Python 3.12, Docker, an Azure OpenAI resource with a chat and an embedding deployment.
